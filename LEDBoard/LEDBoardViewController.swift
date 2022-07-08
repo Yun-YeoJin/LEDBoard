@@ -21,7 +21,6 @@ class LEDBoardViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         mainLabel.numberOfLines = 0
         
         designTextField()
@@ -31,7 +30,7 @@ class LEDBoardViewController: UIViewController, UIGestureRecognizerDelegate {
     
 //studyOutletCollection()
 
-//userTextField.delegate = self
+userTextField.delegate = self
         
 //        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
 //        tapGesture.delegate = self
@@ -40,13 +39,6 @@ class LEDBoardViewController: UIViewController, UIGestureRecognizerDelegate {
 
     }
     
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-//
-//        self.view.isHidden = true
-//        return true
-//
-//
-//    }
 
     func designTextField() {
         userTextField.placeholder = "내용을 작성해주세요."
@@ -120,14 +112,14 @@ class LEDBoardViewController: UIViewController, UIGestureRecognizerDelegate {
     
 }
 
-// extension LEDBoardViewController: UITextFieldDelegate {
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        userTextField.resignFirstResponder() // TextField 비활성화
-//        return true
-//    }
-//}
+    extension LEDBoardViewController: UITextFieldDelegate {
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userTextField.resignFirstResponder() // TextField 비활성화
+        return true
+    }
+}
